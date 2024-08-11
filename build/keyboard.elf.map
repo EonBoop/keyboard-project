@@ -297,12 +297,8 @@ Discarded input sections
                 0x0000000000000000       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_dump
                 0x0000000000000000       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
- .text.sleep_until
-                0x0000000000000000       0xc4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.sleep_us
                 0x0000000000000000       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
- .text.sleep_ms
-                0x0000000000000000       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.at_the_end_of_time
                 0x0000000000000000        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.nil_time
@@ -336,8 +332,6 @@ Discarded input sections
                 0x0000000000000000       0x68 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_ms
                 0x0000000000000000       0x88 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .text.busy_wait_until
-                0x0000000000000000       0x20 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_force_irq
                 0x0000000000000000       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text          0x0000000000000000        0x0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/datetime.c.obj
@@ -1286,9 +1280,9 @@ Discarded input sections
                 0x0000000000000000       0x50 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .text.board_getchar
                 0x0000000000000000        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
- .text          0x0000000000000000        0x0 /tmp/ccsknJZK.o
- .data          0x0000000000000000        0x0 /tmp/ccsknJZK.o
- .bss           0x0000000000000000        0x0 /tmp/ccsknJZK.o
+ .text          0x0000000000000000        0x0 /tmp/ccj1lFLZ.o
+ .data          0x0000000000000000        0x0 /tmp/ccj1lFLZ.o
+ .bss           0x0000000000000000        0x0 /tmp/ccj1lFLZ.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -1552,11 +1546,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x0000000010000000      0x100
                 0x0000000010000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x0000000010000000      0x100 /tmp/ccsknJZK.o
+ .boot2         0x0000000010000000      0x100 /tmp/ccj1lFLZ.o
                 0x0000000010000100                __boot2_end__ = .
                 0x0000000000000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x0000000010000100     0x46c0
+.text           0x0000000010000100     0x47f0
                 0x0000000010000100                __logical_binary_start = .
  *(.vectors)
  .vectors       0x0000000010000100       0xd4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1621,431 +1615,440 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000010000354       0x68 CMakeFiles/keyboard.dir/main.c.obj
                 0x0000000010000354                gpio_init_tasks
  .text.defineKeys
-                0x00000000100003bc      0x164 CMakeFiles/keyboard.dir/main.c.obj
+                0x00000000100003bc      0x16c CMakeFiles/keyboard.dir/main.c.obj
                 0x00000000100003bc                defineKeys
  .text.tud_mount_cb
-                0x0000000010000520       0x10 CMakeFiles/keyboard.dir/main.c.obj
-                0x0000000010000520                tud_mount_cb
+                0x0000000010000528       0x10 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000528                tud_mount_cb
  .text.tud_umount_cb
-                0x0000000010000530        0xc CMakeFiles/keyboard.dir/main.c.obj
-                0x0000000010000530                tud_umount_cb
+                0x0000000010000538        0xc CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000538                tud_umount_cb
  .text.tud_suspend_cb
-                0x000000001000053c       0x10 CMakeFiles/keyboard.dir/main.c.obj
-                0x000000001000053c                tud_suspend_cb
+                0x0000000010000544       0x10 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000544                tud_suspend_cb
  .text.tud_resume_cb
-                0x000000001000054c       0x10 CMakeFiles/keyboard.dir/main.c.obj
-                0x000000001000054c                tud_resume_cb
+                0x0000000010000554       0x10 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000554                tud_resume_cb
  .text.scanKeyboard
-                0x000000001000055c      0x118 CMakeFiles/keyboard.dir/main.c.obj
-                0x000000001000055c                scanKeyboard
+                0x0000000010000564      0x124 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000564                scanKeyboard
  .text.startup.main
-                0x0000000010000674       0xc8 CMakeFiles/keyboard.dir/main.c.obj
-                0x0000000010000674                main
+                0x0000000010000688       0xcc CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000688                main
  .text.tud_hid_report_complete_cb
-                0x000000001000073c       0x78 CMakeFiles/keyboard.dir/main.c.obj
-                0x000000001000073c                tud_hid_report_complete_cb
+                0x0000000010000754       0x78 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010000754                tud_hid_report_complete_cb
  .text.tud_hid_get_report_cb
-                0x00000000100007b4        0x4 CMakeFiles/keyboard.dir/main.c.obj
-                0x00000000100007b4                tud_hid_get_report_cb
+                0x00000000100007cc        0x4 CMakeFiles/keyboard.dir/main.c.obj
+                0x00000000100007cc                tud_hid_get_report_cb
  .text.tud_hid_set_report_cb
-                0x00000000100007b8       0x3c CMakeFiles/keyboard.dir/main.c.obj
-                0x00000000100007b8                tud_hid_set_report_cb
+                0x00000000100007d0       0x3c CMakeFiles/keyboard.dir/main.c.obj
+                0x00000000100007d0                tud_hid_set_report_cb
  .text.tud_descriptor_device_cb
-                0x00000000100007f4        0x8 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x00000000100007f4                tud_descriptor_device_cb
+                0x000000001000080c        0x8 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x000000001000080c                tud_descriptor_device_cb
  .text.tud_hid_descriptor_report_cb
-                0x00000000100007fc        0x8 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x00000000100007fc                tud_hid_descriptor_report_cb
+                0x0000000010000814        0x8 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x0000000010000814                tud_hid_descriptor_report_cb
  .text.tud_descriptor_configuration_cb
-                0x0000000010000804        0x8 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x0000000010000804                tud_descriptor_configuration_cb
+                0x000000001000081c        0x8 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x000000001000081c                tud_descriptor_configuration_cb
  .text.tud_descriptor_string_cb
-                0x000000001000080c       0x90 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x000000001000080c                tud_descriptor_string_cb
+                0x0000000010000824       0x90 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x0000000010000824                tud_descriptor_string_cb
  .text.gpio_set_function
-                0x000000001000089c       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x000000001000089c                gpio_set_function
+                0x00000000100008b4       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x00000000100008b4                gpio_set_function
  .text.gpio_set_pulls
-                0x00000000100008cc       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x00000000100008cc                gpio_set_pulls
+                0x00000000100008e4       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x00000000100008e4                gpio_set_pulls
  .text.gpio_init
-                0x00000000100008fc       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x00000000100008fc                gpio_init
+                0x0000000010000914       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000914                gpio_init
  .text.running_on_fpga
-                0x0000000010000938       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x0000000010000938                running_on_fpga
+                0x0000000010000950       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x0000000010000950                running_on_fpga
  .text.hw_claim_or_assert
-                0x0000000010000948       0x44 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x0000000010000948                hw_claim_or_assert
+                0x0000000010000960       0x44 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000000010000960                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x000000001000098c       0x9c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x000000001000098c                hw_claim_unused_from_range
+                0x00000000100009a4       0x9c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x00000000100009a4                hw_claim_unused_from_range
  .text.spin_locks_reset
-                0x0000000010000a28       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x0000000010000a28                spin_locks_reset
+                0x0000000010000a40       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000000010000a40                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x0000000010000a44       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x0000000010000a44                next_striped_spin_lock_num
+                0x0000000010000a5c       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000000010000a5c                next_striped_spin_lock_num
  .text.spin_lock_claim_unused
-                0x0000000010000a5c       0x20 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x0000000010000a5c                spin_lock_claim_unused
+                0x0000000010000a74       0x20 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000000010000a74                spin_lock_claim_unused
  .text.irq_set_enabled
-                0x0000000010000a7c       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000a7c                irq_set_enabled
+                0x0000000010000a94       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000a94                irq_set_enabled
  .text.irq_get_vtable_handler
-                0x0000000010000aa0       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000aa0                irq_get_vtable_handler
+                0x0000000010000ab8       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000ab8                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x0000000010000ab0       0x54 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000ab0                irq_set_exclusive_handler
+                0x0000000010000ac8       0x54 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000ac8                irq_set_exclusive_handler
  .text.irq_add_shared_handler
-                0x0000000010000b04      0x1e8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000b04                irq_add_shared_handler
+                0x0000000010000b1c      0x1e8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000b1c                irq_add_shared_handler
  .text.irq_remove_handler
-                0x0000000010000cec      0x1b0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000cec                irq_remove_handler
+                0x0000000010000d04      0x1b0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000d04                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x0000000010000e9c       0xb4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000e9c                irq_add_tail_to_free_list
+                0x0000000010000eb4       0xb4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000eb4                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x0000000010000f50       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000f50                irq_init_priorities
+                0x0000000010000f68       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010000f68                irq_init_priorities
  .text.lock_init
-                0x0000000010000f74       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x0000000010000f74                lock_init
+                0x0000000010000f8c       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x0000000010000f8c                lock_init
  .text.mutex_init
-                0x0000000010000f84       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x0000000010000f84                mutex_init
+                0x0000000010000f9c       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x0000000010000f9c                mutex_init
  .text.recursive_mutex_init
-                0x0000000010000fa0       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x0000000010000fa0                recursive_mutex_init
+                0x0000000010000fb8       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x0000000010000fb8                recursive_mutex_init
  .text.critical_section_init
-                0x0000000010000fbc       0x20 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x0000000010000fbc                critical_section_init
+                0x0000000010000fd4       0x20 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x0000000010000fd4                critical_section_init
  .text.timer_pool_entry_comparator
-                0x0000000010000fdc       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x0000000010000fdc                timer_pool_entry_comparator
+                0x0000000010000ff4       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x0000000010000ff4                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x0000000010001010       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x0000000010001028       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x0000000010001040      0x100 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x0000000010001058      0x100 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x0000000010001140      0x1bc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x0000000010001158      0x1bc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x00000000100012fc       0x6c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x00000000100012fc                alarm_pool_init_default
+                0x0000000010001314       0x6c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x0000000010001314                alarm_pool_init_default
  .text.alarm_pool_add_alarm_at
-                0x0000000010001368      0x178 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x0000000010001368                alarm_pool_add_alarm_at
+                0x0000000010001380      0x178 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x0000000010001380                alarm_pool_add_alarm_at
+ .text.sleep_until
+                0x00000000100014f8       0xc4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000100014f8                sleep_until
+ .text.sleep_ms
+                0x00000000100015bc       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000100015bc                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x00000000100014e0       0xd4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x00000000100014e0                best_effort_wfe_or_timeout
+                0x00000000100015f0       0xd4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00000000100015f0                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x00000000100015b4       0xbc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x00000000100016c4       0xbc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x0000000010001670       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001670                hardware_alarm_claim
+                0x0000000010001780       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001780                hardware_alarm_claim
  .text.time_us_64
-                0x0000000010001688       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001688                time_us_64
+                0x0000000010001798       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001798                time_us_64
  .text.busy_wait_us
-                0x000000001000169c       0x54 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x000000001000169c                busy_wait_us
+                0x00000000100017ac       0x54 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x00000000100017ac                busy_wait_us
+ .text.busy_wait_until
+                0x0000000010001800       0x20 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001800                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x00000000100016f0       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x00000000100016f0                hardware_alarm_set_callback
+                0x0000000010001820       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001820                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x000000001000177c       0xd4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x000000001000177c                hardware_alarm_set_target
+                0x00000000100018ac       0xd4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x00000000100018ac                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x0000000010001850       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001850                hardware_alarm_cancel
+                0x0000000010001980       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001980                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x000000001000188c       0x68 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x00000000100019bc       0x68 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x00000000100018f4       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x00000000100018f4                ph_post_alloc_init
+                0x0000000010001a24       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000000010001a24                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x0000000010001930       0x90 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x0000000010001930                ph_merge_two_pass
+                0x0000000010001a60       0x90 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000000010001a60                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x00000000100019c0      0x100 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000000010001af0      0x100 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x0000000010001ac0      0x104 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x0000000010001ac0                ph_remove_head
+                0x0000000010001bf0      0x104 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000000010001bf0                ph_remove_head
  .text.ph_remove_and_free_node
-                0x0000000010001bc4       0x7c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x0000000010001bc4                ph_remove_and_free_node
+                0x0000000010001cf4       0x7c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000000010001cf4                ph_remove_and_free_node
  .text.uart_init
-                0x0000000010001c40      0x188 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x0000000010001c40                uart_init
+                0x0000000010001d70      0x188 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x0000000010001d70                uart_init
  .text.clocks_init
-                0x0000000010001dc8      0x2d0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x0000000010001dc8                clocks_init
+                0x0000000010001ef8      0x2d0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x0000000010001ef8                clocks_init
  .text.clock_get_hz
-                0x0000000010002098        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x0000000010002098                clock_get_hz
+                0x00000000100021c8        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00000000100021c8                clock_get_hz
  .text.pll_init
-                0x00000000100020a4       0xa0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x00000000100020a4                pll_init
+                0x00000000100021d4       0xa0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x00000000100021d4                pll_init
  .text.watchdog_start_tick
-                0x0000000010002144       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x0000000010002144                watchdog_start_tick
+                0x0000000010002274       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x0000000010002274                watchdog_start_tick
  .text.xosc_init
-                0x0000000010002154       0x28 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x0000000010002154                xosc_init
+                0x0000000010002284       0x28 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x0000000010002284                xosc_init
  .text.runtime_init
-                0x000000001000217c       0xf0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x000000001000217c                runtime_init
- .text._exit    0x000000001000226c        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x000000001000226c                _exit
- .text.exit     0x0000000010002270        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x0000000010002270                exit
- .text.panic    0x0000000010002278       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x0000000010002278                panic
+                0x00000000100022ac       0xf0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000000100022ac                runtime_init
+ .text._exit    0x000000001000239c        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x000000001000239c                _exit
+ .text.exit     0x00000000100023a0        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000000100023a0                exit
+ .text.panic    0x00000000100023a8       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000000100023a8                panic
  .text.hard_assertion_failure
-                0x00000000100022a8        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x00000000100022a8                hard_assertion_failure
+                0x00000000100023d8        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000000100023d8                hard_assertion_failure
  .text._out_char
-                0x00000000100022b4       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x00000000100023e4       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.weak_raw_vprintf
-                0x00000000100022c4       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x00000000100022c4                weak_raw_vprintf
- .text          0x00000000100022f4       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x00000000100023f4       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x00000000100023f4                weak_raw_vprintf
+ .text          0x0000000010002424       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x0000000010002304       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x0000000010002304                rom_func_lookup
+                0x0000000010002434       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x0000000010002434                rom_func_lookup
  .text.rom_data_lookup
-                0x0000000010002314       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x0000000010002314                rom_data_lookup
+                0x0000000010002444       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x0000000010002444                rom_data_lookup
  .text.rom_funcs_lookup
-                0x0000000010002324       0x44 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x0000000010002324                rom_funcs_lookup
+                0x0000000010002454       0x44 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x0000000010002454                rom_funcs_lookup
  .text.__wrap___aeabi_uidiv
-                0x0000000010002368       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x0000000010002368                __wrap___aeabi_uidiv
-                0x0000000010002368                __wrap___aeabi_uidivmod
-                0x0000000010002368                div_u32u32
-                0x0000000010002368                divmod_u32u32
-                0x0000000010002370                divmod_u32u32_unsafe
-                0x0000000010002398                divmod_u32u32_savestate
+                0x0000000010002498       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x0000000010002498                __wrap___aeabi_uidiv
+                0x0000000010002498                __wrap___aeabi_uidivmod
+                0x0000000010002498                div_u32u32
+                0x0000000010002498                divmod_u32u32
+                0x00000000100024a0                divmod_u32u32_unsafe
+                0x00000000100024c8                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x00000000100023b4      0x424 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x00000000100023b4                div_s64s64
-                0x00000000100023b4                divmod_s64s64
-                0x00000000100023b4                __wrap___aeabi_ldivmod
-                0x00000000100023e4                div_u64u64
-                0x00000000100023e4                divmod_u64u64
-                0x00000000100023e4                __wrap___aeabi_uldivmod
-                0x00000000100023f4                divmod_u64u64_savestate
-                0x0000000010002414                divmod_s64s64_unsafe
-                0x000000001000249c                divmod_u64u64_unsafe
+                0x00000000100024e4      0x424 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x00000000100024e4                div_s64s64
+                0x00000000100024e4                divmod_s64s64
+                0x00000000100024e4                __wrap___aeabi_ldivmod
+                0x0000000010002514                div_u64u64
+                0x0000000010002514                divmod_u64u64
+                0x0000000010002514                __wrap___aeabi_uldivmod
+                0x0000000010002524                divmod_u64u64_savestate
+                0x0000000010002544                divmod_s64s64_unsafe
+                0x00000000100025cc                divmod_u64u64_unsafe
  .text.__aeabi_double_init
-                0x00000000100027d8       0x94 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x00000000100027d8                __aeabi_double_init
+                0x0000000010002908       0x94 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x0000000010002908                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x000000001000286c       0x2c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x000000001000286c                double_table_shim_on_use_helper
+                0x000000001000299c       0x2c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x000000001000299c                double_table_shim_on_use_helper
  .text.__aeabi_lmul
-                0x0000000010002898       0x32 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x0000000010002898                __wrap___aeabi_lmul
- *fill*         0x00000000100028ca        0x2 
+                0x00000000100029c8       0x32 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x00000000100029c8                __wrap___aeabi_lmul
+ *fill*         0x00000000100029fa        0x2 
  .text.__aeabi_float_init
-                0x00000000100028cc       0x64 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x00000000100028cc                __aeabi_float_init
+                0x00000000100029fc       0x64 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00000000100029fc                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x0000000010002930       0x2c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x0000000010002930                float_table_shim_on_use_helper
- .text          0x000000001000295c       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x000000001000295c                __aeabi_mem_init
- .text.memset   0x000000001000296c        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x000000001000296c                __wrap_memset
- .text.memcpy   0x0000000010002978        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x0000000010002978                __wrap___aeabi_memcpy
-                0x0000000010002978                __wrap_memcpy
+                0x0000000010002a60       0x2c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x0000000010002a60                float_table_shim_on_use_helper
+ .text          0x0000000010002a8c       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x0000000010002a8c                __aeabi_mem_init
+ .text.memset   0x0000000010002a9c        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x0000000010002a9c                __wrap_memset
+ .text.memcpy   0x0000000010002aa8        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x0000000010002aa8                __wrap___aeabi_memcpy
+                0x0000000010002aa8                __wrap_memcpy
  .text.stdio_out_chars_no_crlf
-                0x0000000010002984       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002ab4       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_out_chars_crlf
-                0x0000000010002994       0xb4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002ac4       0xb4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_put_string.isra.0
-                0x0000000010002a48       0xfc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002b78       0xfc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x0000000010002b44       0x98 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x0000000010002b44                __wrap_putchar
+                0x0000000010002c74       0x98 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002c74                __wrap_putchar
  .text.__wrap_puts
-                0x0000000010002bdc       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x0000000010002bdc                __wrap_puts
+                0x0000000010002d0c       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002d0c                __wrap_puts
  .text.stdio_set_driver_enabled
-                0x0000000010002c18       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x0000000010002c18                stdio_set_driver_enabled
+                0x0000000010002d48       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002d48                stdio_set_driver_enabled
  .text.stdio_uart_out_chars
-                0x0000000010002c48       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000000010002d78       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_in_chars
-                0x0000000010002c94       0x84 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x0000000010002c94                stdio_uart_in_chars
+                0x0000000010002dc4       0x84 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000000010002dc4                stdio_uart_in_chars
  .text.on_uart_rx
-                0x0000000010002d18       0x28 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000000010002e48       0x28 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_set_chars_available_callback
-                0x0000000010002d40       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000000010002e70       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_init_full
-                0x0000000010002dcc       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x0000000010002dcc                stdio_uart_init_full
+                0x0000000010002efc       0x3c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000000010002efc                stdio_uart_init_full
  .text.startup._retrieve_unique_id_on_boot
-                0x0000000010002e08       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x0000000010002f38       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .text.pico_get_unique_board_id_string
-                0x0000000010002e18      0x1a8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x0000000010002e18                pico_get_unique_board_id_string
+                0x0000000010002f48      0x1a8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x0000000010002f48                pico_get_unique_board_id_string
  .text.flash_get_unique_id
-                0x0000000010002fc0       0x40 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x0000000010002fc0                flash_get_unique_id
+                0x00000000100030f0       0x40 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x00000000100030f0                flash_get_unique_id
  .text.dcd_int_enable
-                0x0000000010003000        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003000                dcd_int_enable
+                0x0000000010003130        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003130                dcd_int_enable
  .text.dcd_set_address
-                0x000000001000300c       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x000000001000300c                dcd_set_address
+                0x000000001000313c       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x000000001000313c                dcd_set_address
  .text.dcd_remote_wakeup
-                0x0000000010003020       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003020                dcd_remote_wakeup
+                0x0000000010003150       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003150                dcd_remote_wakeup
  .text.dcd_connect
-                0x0000000010003038       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003038                dcd_connect
+                0x0000000010003168       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003168                dcd_connect
  .text.dcd_init
-                0x0000000010003048       0x98 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003048                dcd_init
+                0x0000000010003178       0x98 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003178                dcd_init
  .text.dcd_edpt0_status_complete
-                0x00000000100030e0       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x00000000100030e0                dcd_edpt0_status_complete
+                0x0000000010003210       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003210                dcd_edpt0_status_complete
  .text.dcd_edpt_open
-                0x00000000100030fc      0x108 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x00000000100030fc                dcd_edpt_open
+                0x000000001000322c      0x108 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x000000001000322c                dcd_edpt_open
  .text.dcd_edpt_close_all
-                0x0000000010003204        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003204                dcd_edpt_close_all
+                0x0000000010003334        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003334                dcd_edpt_close_all
  .text.dcd_edpt_xfer
-                0x000000001000320c       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x000000001000320c                dcd_edpt_xfer
+                0x000000001000333c       0x24 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x000000001000333c                dcd_edpt_xfer
  .text.dcd_edpt_stall
-                0x0000000010003230       0x38 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003230                dcd_edpt_stall
+                0x0000000010003360       0x38 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003360                dcd_edpt_stall
  .text.dcd_edpt_clear_stall
-                0x0000000010003268       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x0000000010003268                dcd_edpt_clear_stall
+                0x0000000010003398       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000010003398                dcd_edpt_clear_stall
  .text.rp2040_usb_init
-                0x0000000010003298       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x0000000010003298                rp2040_usb_init
+                0x00000000100033c8       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x00000000100033c8                rp2040_usb_init
  .text.hw_endpoint_xfer_start
-                0x00000000100032e4       0x50 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x00000000100032e4                hw_endpoint_xfer_start
+                0x0000000010003414       0x50 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x0000000010003414                hw_endpoint_xfer_start
  .text.tud_mounted
-                0x0000000010003334       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003334                tud_mounted
+                0x0000000010003464       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003464                tud_mounted
  .text.tud_suspended
-                0x0000000010003344       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003344                tud_suspended
+                0x0000000010003474       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003474                tud_suspended
  .text.tud_remote_wakeup
-                0x0000000010003354       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003354                tud_remote_wakeup
+                0x0000000010003484       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003484                tud_remote_wakeup
  .text.tud_inited
-                0x0000000010003384       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003384                tud_inited
+                0x00000000100034b4       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x00000000100034b4                tud_inited
  .text.tud_init
-                0x0000000010003398       0xe4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003398                tud_init
+                0x00000000100034c8       0xe4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x00000000100034c8                tud_init
  .text.tud_task_ext
-                0x000000001000347c      0x870 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x000000001000347c                tud_task_ext
+                0x00000000100035ac      0x870 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x00000000100035ac                tud_task_ext
  .text.usbd_open_edpt_pair
-                0x0000000010003cec       0x9c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003cec                usbd_open_edpt_pair
+                0x0000000010003e1c       0x9c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003e1c                usbd_open_edpt_pair
  .text.usbd_edpt_claim
-                0x0000000010003d88       0x28 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003d88                usbd_edpt_claim
+                0x0000000010003eb8       0x28 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003eb8                usbd_edpt_claim
  .text.usbd_edpt_xfer
-                0x0000000010003db0       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003db0                usbd_edpt_xfer
+                0x0000000010003ee0       0x4c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003ee0                usbd_edpt_xfer
  .text.usbd_edpt_busy
-                0x0000000010003dfc       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x0000000010003dfc                usbd_edpt_busy
+                0x0000000010003f2c       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000010003f2c                usbd_edpt_busy
  .text.tud_control_status
-                0x0000000010003e18       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x0000000010003e18                tud_control_status
+                0x0000000010003f48       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000000010003f48                tud_control_status
  .text.tud_control_xfer
-                0x0000000010003e48       0xbc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x0000000010003e48                tud_control_xfer
+                0x0000000010003f78       0xbc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000000010003f78                tud_control_xfer
  .text.usbd_control_reset
-                0x0000000010003f04       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x0000000010003f04                usbd_control_reset
+                0x0000000010004034       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000000010004034                usbd_control_reset
  .text.usbd_control_set_complete_callback
-                0x0000000010003f18        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x0000000010003f18                usbd_control_set_complete_callback
+                0x0000000010004048        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000000010004048                usbd_control_set_complete_callback
  .text.usbd_control_set_request
-                0x0000000010003f24       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x0000000010003f24                usbd_control_set_request
+                0x0000000010004054       0x1c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000000010004054                usbd_control_set_request
  .text.usbd_control_xfer_cb
-                0x0000000010003f40       0xfc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x0000000010003f40                usbd_control_xfer_cb
+                0x0000000010004070       0xfc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000000010004070                usbd_control_xfer_cb
  .text.tud_hid_n_ready
-                0x000000001000403c       0x38 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x000000001000403c                tud_hid_n_ready
+                0x000000001000416c       0x38 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x000000001000416c                tud_hid_n_ready
  .text.tud_hid_n_keyboard_report
-                0x0000000010004074       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x0000000010004074                tud_hid_n_keyboard_report
+                0x00000000100041a4       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x00000000100041a4                tud_hid_n_keyboard_report
  .text.hidd_init
-                0x0000000010004100       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x0000000010004100                hidd_init
+                0x0000000010004230       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x0000000010004230                hidd_init
  .text.hidd_reset
-                0x0000000010004114       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x0000000010004114                hidd_reset
+                0x0000000010004244       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x0000000010004244                hidd_reset
  .text.hidd_open
-                0x0000000010004128       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x0000000010004128                hidd_open
+                0x0000000010004258       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x0000000010004258                hidd_open
  .text.hidd_control_xfer_cb
-                0x00000000100041b4      0x1a8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x00000000100041b4                hidd_control_xfer_cb
+                0x00000000100042e4      0x1a8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x00000000100042e4                hidd_control_xfer_cb
  .text.hidd_xfer_cb
-                0x000000001000435c       0x64 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-                0x000000001000435c                hidd_xfer_cb
+                0x000000001000448c       0x64 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x000000001000448c                hidd_xfer_cb
  .text.tusb_init
-                0x00000000100043c0        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x00000000100043c0                tusb_init
+                0x00000000100044f0        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x00000000100044f0                tusb_init
  .text.tusb_inited
-                0x00000000100043cc        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x00000000100043cc                tusb_inited
+                0x00000000100044fc        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x00000000100044fc                tusb_inited
  .text.tu_edpt_claim
-                0x00000000100043d4       0x50 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x00000000100043d4                tu_edpt_claim
+                0x0000000010004504       0x50 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x0000000010004504                tu_edpt_claim
  .text.tu_edpt_validate
-                0x0000000010004424       0x78 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x0000000010004424                tu_edpt_validate
+                0x0000000010004554       0x78 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x0000000010004554                tu_edpt_validate
  .text.tu_edpt_bind_driver
-                0x000000001000449c       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x000000001000449c                tu_edpt_bind_driver
+                0x00000000100045cc       0x34 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x00000000100045cc                tu_edpt_bind_driver
  .text.tu_fifo_read
-                0x00000000100044d0       0xa0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x00000000100044d0                tu_fifo_read
+                0x0000000010004600       0xa0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x0000000010004600                tu_fifo_read
  .text.tu_fifo_write
-                0x0000000010004570       0x88 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x0000000010004570                tu_fifo_write
+                0x00000000100046a0       0x88 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x00000000100046a0                tu_fifo_write
  .text.tu_fifo_clear
-                0x00000000100045f8       0x40 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x00000000100045f8                tu_fifo_clear
+                0x0000000010004728       0x40 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x0000000010004728                tu_fifo_clear
  .text.board_init
-                0x0000000010004638       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-                0x0000000010004638                board_init
+                0x0000000010004768       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004768                board_init
  .text.board_led_write
-                0x0000000010004668       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-                0x0000000010004668                board_led_write
+                0x0000000010004798       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004798                board_led_write
  .text.board_button_read
-                0x000000001000467c       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-                0x000000001000467c                board_button_read
- .text          0x000000001000468c       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
-                0x000000001000468c                strlen
+                0x00000000100047ac       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x00000000100047ac                board_button_read
+ .text          0x00000000100047bc       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x00000000100047bc                strlen
  *(.fini)
- .fini          0x00000000100046e8        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
-                0x00000000100046e8                _fini
- *fill*         0x00000000100046ec        0x4 
- .fini.__stub   0x00000000100046f0       0xd0 linker stubs
+ .fini          0x0000000010004818        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
+                0x0000000010004818                _fini
+ *fill*         0x000000001000481c        0x4 
+ .fini.__stub   0x0000000010004820       0xd0 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2057,129 +2060,129 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x00000000100047c0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x00000000100047c0                . = ALIGN (0x4)
+ .eh_frame      0x00000000100048f0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x00000000100048f0                . = ALIGN (0x4)
 
-.glue_7         0x00000000100047c0        0x0
- .glue_7        0x00000000100047c0        0x0 linker stubs
+.glue_7         0x00000000100048f0        0x0
+ .glue_7        0x00000000100048f0        0x0 linker stubs
 
-.glue_7t        0x00000000100047c0        0x0
- .glue_7t       0x00000000100047c0        0x0 linker stubs
+.glue_7t        0x00000000100048f0        0x0
+ .glue_7t       0x00000000100048f0        0x0 linker stubs
 
-.vfp11_veneer   0x00000000100047c0        0x0
- .vfp11_veneer  0x00000000100047c0        0x0 linker stubs
+.vfp11_veneer   0x00000000100048f0        0x0
+ .vfp11_veneer  0x00000000100048f0        0x0 linker stubs
 
-.v4_bx          0x00000000100047c0        0x0
- .v4_bx         0x00000000100047c0        0x0 linker stubs
+.v4_bx          0x00000000100048f0        0x0
+ .v4_bx         0x00000000100048f0        0x0 linker stubs
 
-.iplt           0x00000000100047c0        0x0
- .iplt          0x00000000100047c0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x00000000100048f0        0x0
+ .iplt          0x00000000100048f0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x00000000100047c0      0x3ac
+.rodata         0x00000000100048f0      0x3ac
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.bottomRecieve
-                0x00000000100047c0       0x28 CMakeFiles/keyboard.dir/main.c.obj
-                0x00000000100047c0                bottomRecieve
+                0x00000000100048f0       0x28 CMakeFiles/keyboard.dir/main.c.obj
+                0x00000000100048f0                bottomRecieve
  .rodata.topSend
-                0x00000000100047e8       0x24 CMakeFiles/keyboard.dir/main.c.obj
-                0x00000000100047e8                topSend
+                0x0000000010004918       0x24 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000010004918                topSend
  .rodata.str1.4
-                0x000000001000480c       0x17 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
- *fill*         0x0000000010004823        0x1 
+                0x000000001000493c       0x17 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+ *fill*         0x0000000010004953        0x1 
  .rodata.__compound_literal.0
-                0x0000000010004824        0x2 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
- *fill*         0x0000000010004826        0x2 
+                0x0000000010004954        0x2 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+ *fill*         0x0000000010004956        0x2 
  .rodata.desc_configuration
-                0x0000000010004828       0x22 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x0000000010004828                desc_configuration
- *fill*         0x000000001000484a        0x2 
+                0x0000000010004958       0x22 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x0000000010004958                desc_configuration
+ *fill*         0x000000001000497a        0x2 
  .rodata.desc_device
-                0x000000001000484c       0x12 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x000000001000484c                desc_device
- *fill*         0x000000001000485e        0x2 
- .rodata.desc_hid_report
-                0x0000000010004860       0xef CMakeFiles/keyboard.dir/usb_descriptors.c.obj
-                0x0000000010004860                desc_hid_report
- *fill*         0x000000001000494f        0x1 
- .rodata.spin_lock_claim_unused.str1.4
-                0x0000000010004950       0x1b CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- *fill*         0x000000001000496b        0x1 
- .rodata.hardware_alarm_claim.str1.4
-                0x000000001000496c       0x22 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x000000001000497c       0x12 CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x000000001000497c                desc_device
  *fill*         0x000000001000498e        0x2 
- .rodata.panic.str1.4
-                0x0000000010004990       0x12 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x00000000100049a2        0x2 
- .rodata.hard_assertion_failure.str1.4
-                0x00000000100049a4        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .rodata.str1.4
-                0x00000000100049b0       0x40 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_44
-                0x00000000100049f0        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_75
-                0x00000000100049fc        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_81
-                0x0000000010004a08        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.crlf_str.0
-                0x0000000010004a14        0x2 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x0000000010004a16        0x2 
- .rodata.str1.4
-                0x0000000010004a18       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .rodata.str1.4
-                0x0000000010004a2c       0x53 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .rodata.desc_hid_report
+                0x0000000010004990       0xef CMakeFiles/keyboard.dir/usb_descriptors.c.obj
+                0x0000000010004990                desc_hid_report
  *fill*         0x0000000010004a7f        0x1 
- .rodata.tud_task_ext
-                0x0000000010004a80       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .rodata._usbd_driver
-                0x0000000010004b0c       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .rodata.hidd_control_xfer_cb
-                0x0000000010004b24       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+ .rodata.spin_lock_claim_unused.str1.4
+                0x0000000010004a80       0x1b CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ *fill*         0x0000000010004a9b        0x1 
+ .rodata.hardware_alarm_claim.str1.4
+                0x0000000010004a9c       0x22 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x0000000010004abe        0x2 
+ .rodata.panic.str1.4
+                0x0000000010004ac0       0x12 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x0000000010004ad2        0x2 
+ .rodata.hard_assertion_failure.str1.4
+                0x0000000010004ad4        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.str1.4
-                0x0000000010004b54        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004ae0       0x40 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_44
+                0x0000000010004b20        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_75
+                0x0000000010004b2c        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_81
+                0x0000000010004b38        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.crlf_str.0
+                0x0000000010004b44        0x2 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x0000000010004b46        0x2 
+ .rodata.str1.4
+                0x0000000010004b48       0x14 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .rodata.str1.4
+                0x0000000010004b5c       0x53 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x0000000010004baf        0x1 
+ .rodata.tud_task_ext
+                0x0000000010004bb0       0x8c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .rodata._usbd_driver
+                0x0000000010004c3c       0x18 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .rodata.hidd_control_xfer_cb
+                0x0000000010004c54       0x30 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+ .rodata.str1.4
+                0x0000000010004c84        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .rodata.__bi_142.0
-                0x0000000010004b58        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004c88        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .rodata.__bi_152.1
-                0x0000000010004b64        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-                0x0000000010004b6c                . = ALIGN (0x4)
+                0x0000000010004c94        0x8 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004c9c                . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x0000000010004b6c                . = ALIGN (0x4)
+                0x0000000010004c9c                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000010004b6c                __exidx_start = .
+                0x0000000010004c9c                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000010004b6c                __exidx_end = .
-                0x0000000010004b6c                . = ALIGN (0x4)
-                0x0000000010004b6c                __binary_info_start = .
+                0x0000000010004c9c                __exidx_end = .
+                0x0000000010004c9c                . = ALIGN (0x4)
+                0x0000000010004c9c                __binary_info_start = .
 
-.binary_info    0x0000000010004b6c       0x24
+.binary_info    0x0000000010004c9c       0x24
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr22
-                0x0000000010004b6c        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004c9c        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x0000000010004b70        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004ca0        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x0000000010004b74        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004ca4        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x0000000010004b78        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004ca8        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x0000000010004b7c        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004cac        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x0000000010004b80        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004cb0        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr81
-                0x0000000010004b84        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010004cb4        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr142
-                0x0000000010004b88        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004cb8        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .binary_info.keep.__bi_ptr152
-                0x0000000010004b8c        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000010004cbc        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  *(.binary_info.*)
-                0x0000000010004b90                __binary_info_end = .
+                0x0000000010004cc0                __binary_info_end = .
 
-.rel.dyn        0x0000000010004b90        0x0
- .rel.iplt      0x0000000010004b90        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x0000000010004b90                . = ALIGN (0x4)
+.rel.dyn        0x0000000010004cc0        0x0
+ .rel.iplt      0x0000000010004cc0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000010004cc0                . = ALIGN (0x4)
 
 .ram_vector_table
                 0x0000000020000000       0xc0
@@ -2188,7 +2191,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000020000000       0xc0 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x0000000020000000                ram_vector_table
 
-.data           0x00000000200000c0      0xe80 load address 0x0000000010004b90
+.data           0x00000000200000c0      0xe80 load address 0x0000000010004cc0
                 0x00000000200000c0                __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -2326,38 +2329,38 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.jcr)
                 0x0000000020000f40                . = ALIGN (0x4)
                 0x0000000020000f40                __data_end__ = .
-                0x0000000010004b90                __etext = LOADADDR (.data)
+                0x0000000010004cc0                __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x0000000020000f40        0x0 load address 0x0000000010005a10
+                0x0000000020000f40        0x0 load address 0x0000000010005b40
  .tm_clone_table
                 0x0000000020000f40        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x0000000020000f40        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x0000000020000f40        0x0 load address 0x0000000010005a10
+.igot.plt       0x0000000020000f40        0x0 load address 0x0000000010005b40
  .igot.plt      0x0000000020000f40        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x0000000020000f40        0x0 load address 0x0000000010005a10
+                0x0000000020000f40        0x0 load address 0x0000000010005b40
                 0x0000000020000f40                . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x0000000020040000        0x0 load address 0x0000000010005a10
+.scratch_x      0x0000000020040000        0x0 load address 0x0000000010005b40
                 0x0000000020040000                __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x0000000020040000                . = ALIGN (0x4)
                 0x0000000020040000                __scratch_x_end__ = .
-                0x0000000010005a10                __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x0000000010005b40                __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x0000000020041000        0x0 load address 0x0000000010005a10
+.scratch_y      0x0000000020041000        0x0 load address 0x0000000010005b40
                 0x0000000020041000                __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x0000000020041000                . = ALIGN (0x4)
                 0x0000000020041000                __scratch_y_end__ = .
-                0x0000000010005a10                __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x0000000010005b40                __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x0000000020000f40      0xbb4
+.bss            0x0000000020000f40      0xbc0
                 0x0000000020000f40                . = ALIGN (0x4)
                 0x0000000020000f40                __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -2436,40 +2439,41 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  .bss.target_hi
                 0x0000000020001a1c       0x10 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.topBottomKey
-                0x0000000020001a2c       0xb4 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000020001a2c       0xbd CMakeFiles/keyboard.dir/main.c.obj
                 0x0000000020001a2c                topBottomKey
+ *fill*         0x0000000020001ae9        0x3 
  .bss.uart_char_to_line_feed
-                0x0000000020001ae0        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x0000000020001ae0                uart_char_to_line_feed
+                0x0000000020001aec        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x0000000020001aec                uart_char_to_line_feed
  .bss.uart_inst
-                0x0000000020001ae4        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+                0x0000000020001af0        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .bss.uart_instance
-                0x0000000020001ae8        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000000020001af4        0x4 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss._app_driver_count
-                0x0000000020001aec        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000000020001af8        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._sof_enable
-                0x0000000020001aed        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000000020001af9        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.boot2_copyout_valid
-                0x0000000020001aee        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .bss.claimed   0x0000000020001aef        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000020001afa        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .bss.claimed   0x0000000020001afb        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.has_keyboard_key.3
-                0x0000000020001af0        0x1 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000020001afc        0x1 CMakeFiles/keyboard.dir/main.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x0000000020001af1        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000020001afd        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .bss.led_state.0
-                0x0000000020001af2        0x1 CMakeFiles/keyboard.dir/main.c.obj
+                0x0000000020001afe        0x1 CMakeFiles/keyboard.dir/main.c.obj
  .bss.timer_callbacks_pending
-                0x0000000020001af3        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000020001aff        0x1 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  *(COMMON)
-                0x0000000020001af4                . = ALIGN (0x4)
-                0x0000000020001af4                __bss_end__ = .
+                0x0000000020001b00                . = ALIGN (0x4)
+                0x0000000020001b00                __bss_end__ = .
 
-.heap           0x0000000020001af4      0x800
-                0x0000000020001af4                __end__ = .
-                0x0000000020001af4                end = __end__
+.heap           0x0000000020001b00      0x800
+                0x0000000020001b00                __end__ = .
+                0x0000000020001b00                end = __end__
  *(.heap*)
- .heap          0x0000000020001af4      0x800 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x00000000200022f4                __HeapLimit = .
+ .heap          0x0000000020001b00      0x800 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x0000000020002300                __HeapLimit = .
 
 .stack1_dummy   0x0000000020040000        0x0
  *(.stack1*)
@@ -2478,8 +2482,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.stack*)
  .stack         0x0000000020041000      0x800 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x0000000010005a10        0x0
-                0x0000000010005a10                PROVIDE (__flash_binary_end = .)
+.flash_end      0x0000000010005b40        0x0
+                0x0000000010005b40                PROVIDE (__flash_binary_end = .)
                 0x0000000020040000                __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x0000000020041000                __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x0000000020042000                __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2558,7 +2562,7 @@ LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tiny
 LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-LOAD /tmp/ccsknJZK.o
+LOAD /tmp/ccj1lFLZ.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2674,7 +2678,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000000000007a8       0x2c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .ARM.attributes
-                0x00000000000007d4       0x22 /tmp/ccsknJZK.o
+                0x00000000000007d4       0x22 /tmp/ccj1lFLZ.o
  .ARM.attributes
                 0x00000000000007f6       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

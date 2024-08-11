@@ -51,7 +51,7 @@ enum  {
 const uint topSend[]={0,1,2,3,4,5,6,7,8};
 const uint bottomRecieve[]={9,10,11,12,13,14,15,18,19,20};
 
-uint8_t topBottomKey[9][20] = {};
+uint8_t topBottomKey[9][21] = {};
 uint32_t currentModifier;
 
 static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
@@ -190,7 +190,7 @@ int main(void)
   {
     tud_task(); // tinyusb device task
     led_blinking_task();
-    
+    sleep_ms(5); 
     hid_task();
   }
 }
@@ -291,7 +291,7 @@ bool scanKeyboard(){
         //key that corresponds to. Then send that as an HID report
         send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topSend[i]][bottomRecieve[j]]);
         istyping = 1; 
-        };
+      };
       };
     //return topSend GPIO pin to low once we're done with it
     gpio_put(topSend[i],0);
@@ -300,7 +300,7 @@ bool scanKeyboard(){
 }
 void keyboard_task(){
   int n = 0;
-  while (n < 1000){
+  while (n < 10){
   scanKeyboard();
   n = n+1;
   
