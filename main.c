@@ -273,6 +273,9 @@ bool stateHandling(int topPin, int bottomPin, int currentState) {
   static int pressCount[9][21] = {0};
   static bool buttonState[9][21] = {0};
   int flags = currentState | (buttonState[topPin][bottomPin] << 1);
+  //bit shift adds a zero to the right. current state is an int and has eight bits so we need the other bit to make the or operation happen correctly
+  //... why didn't I just make current state a bool???
+
   // Comparing current state vs last state
   // 1 is pressed 0 is open
   
