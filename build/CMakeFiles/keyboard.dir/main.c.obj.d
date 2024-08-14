@@ -1,5 +1,7 @@
 CMakeFiles/keyboard.dir/main.c.obj: \
  /home/eon/fucking_around/Pico/keyboard2/main.c \
+ /usr/include/newlib/fenv.h /usr/include/newlib/sys/fenv.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /usr/include/newlib/stdlib.h /usr/include/newlib/machine/ieeefp.h \
  /usr/include/newlib/_ansi.h /usr/include/newlib/newlib.h \
  /usr/include/newlib/_newlib_version.h /usr/include/newlib/sys/config.h \
@@ -22,7 +24,6 @@ CMakeFiles/keyboard.dir/main.c.obj: \
  /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
  /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
  /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/board.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
  /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/ansi_escape.h \
  /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.h \

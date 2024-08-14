@@ -2325,6 +2325,9 @@ CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_commo
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
 
 CMakeFiles/keyboard.dir/main.c.obj: ../main.c \
+  /usr/include/newlib/fenv.h \
+  /usr/include/newlib/sys/fenv.h \
+  /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
   /usr/include/newlib/stdlib.h \
   /usr/include/newlib/machine/ieeefp.h \
   /usr/include/newlib/_ansi.h \
@@ -2362,7 +2365,6 @@ CMakeFiles/keyboard.dir/main.c.obj: ../main.c \
   /usr/include/newlib/strings.h \
   /usr/include/newlib/sys/string.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/board.h \
-  /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
   /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/ansi_escape.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/tusb.h \
@@ -2508,6 +2510,10 @@ CMakeFiles/keyboard.dir/usb_descriptors.c.obj: ../usb_descriptors.c \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h \
   ../usb_descriptors.h
 
+
+/usr/include/newlib/sys/fenv.h:
+
+/usr/include/newlib/fenv.h:
 
 ../main.c:
 
