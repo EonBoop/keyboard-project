@@ -55,7 +55,7 @@ const uint bottomRecieve[]={9,10,11,12,13,14,15,18,19,20};
 
 //could make this a struct, but I'm too far gone
 uint8_t topBottomKey[9][21] = {};
-uint32_t currentModifier;
+uint8_t currentModifier;
 
 
 static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
@@ -114,8 +114,8 @@ void defineKeys(){
   topBottomKey[2][19] = HID_KEY_ALT_LEFT;
   topBottomKey[2][20] = HID_KEY_SPACE;
 
-  topBottomKey[3][9] = HID_KEY_PRINT_SCREEN;
-  topBottomKey[3][10] = HID_KEY_SCROLL_LOCK;
+  topBottomKey[3][9] = HID_KEY_ARROW_UP;
+  topBottomKey[3][10] = HID_KEY_PRINT_SCREEN;
   topBottomKey[3][11] = HID_KEY_PAUSE;
   topBottomKey[3][13] = HID_KEY_INSERT;
   topBottomKey[3][14] = HID_KEY_HOME;
@@ -239,8 +239,8 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
       {
         uint8_t keycode[6] = { 0 };
         keycode[0] = btn;
-        keycode[1] = btn;
         tud_hid_keyboard_report(REPORT_ID_KEYBOARD, currentModifier, keycode);
+        //tud_hid_keyboard_report(REPORT_ID_KEYBOARD, currentModifier, keycode);
         has_keyboard_key = true;
       }else
       {
@@ -253,10 +253,38 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
 }
 
 void checkModifers(){
+  const uint32_t interval_ms = 10;
+  static uint32_t start_ms = 0;
+
+  if ( board_millis() - start_ms < interval_ms) return; // not enough time
+  start_ms += interval_ms;
+
+
+  currentModifier = 0x00;
+  //going to do this the manual way and hope it never changes
   
+  //left control 0x01
+  gpio_put(1,1);
+  if (gpio_get(12)){
+    currentModifier |= 0x02;
+  };
+  if (gpio_get(13)){
+    currentModifier |= 0x02;
+  };
+  gpio_put(1,0);
 
+  //left alt 0x04
+  gpio_put(2,1);
+  if (gpio_get(13)||gpio_get(19)){
+    currentModifier |= 0x2;
+  };
+  gpio_put(2,0);
 
-  currentModifier = 0;
+  gpio_put(4,1);
+  if (gpio_get(15)) currentModifier |= 0x02;
+  if (gpio_get(18)) currentModifier |= 0x02;
+  gpio_put(4,0);
+
 }
 
 bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
@@ -272,6 +300,7 @@ bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
 bool stateHandling(int topPin, int bottomPin, int currentState) {
   static int pressCount[9][21] = {0};
   static bool buttonState[9][21] = {0};
+
   int flags = currentState | (buttonState[topPin][bottomPin] << 1);
   //bit shift adds a zero to the right. current state is an int and has eight bits so we need the other bit to make the or operation happen correctly
   //... why didn't I just make current state a bool???
@@ -342,7 +371,7 @@ bool scanKeyboard(){
       bottomPin = bottomRecieve[j];
       currentState = gpio_get(bottomPin);
 
-      if (allowButtonPress(topPin,bottomPin)) stateHandling(topPin,bottomPin,currentState);
+      if (allowButtonPress(topPin,bottomPin) && !isModiferKey(topBottomKey[topPin][bottomPin])) stateHandling(topPin,bottomPin,currentState);
 
       };
     //return topSend GPIO pin to low once we're done with it
