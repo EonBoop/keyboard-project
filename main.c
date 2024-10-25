@@ -30,9 +30,10 @@
 #include <string.h>
 
 #include "bsp/board.h"
+#include "pico/stdio.h"
 #include "tusb.h"
 #include "hardware/gpio.h"
-
+#include "pico/stdlib.h"
 #include "usb_descriptors.h"
 
 //--------------------------------------------------------------------+
@@ -95,8 +96,8 @@ void defineKeys(){
   topBottomKey[1][9] = HID_KEY_ESCAPE;
   topBottomKey[1][10] = HID_KEY_GRAVE;
   topBottomKey[1][11] = HID_KEY_TAB;
-  topBottomKey[1][12] = HID_KEY_CONTROL_LEFT;
-  topBottomKey[1][13] = HID_KEY_SHIFT_LEFT;
+  topBottomKey[1][12] = 0x01;//KEYBOARD_MODIFIER_LEFTCTRL;//HID_KEY_CONTROL_LEFT;
+  topBottomKey[1][13] = 0x02;//KEYBOARD_MODIFIER_LEFTSHIFT;//HID_KEY_SHIFT_LEFT;
   topBottomKey[1][14] = HID_KEY_F1;
   topBottomKey[1][15] = HID_KEY_1;
   topBottomKey[1][18] = HID_KEY_Z;
@@ -107,11 +108,11 @@ void defineKeys(){
   topBottomKey[2][10] = HID_KEY_ARROW_RIGHT;
   topBottomKey[2][11] = HID_KEY_ARROW_DOWN;
   topBottomKey[2][12] = HID_KEY_ARROW_LEFT;
-  topBottomKey[2][13] = HID_KEY_ALT_LEFT;
+  topBottomKey[2][13] = 0x04;//KEYBOARD_MODIFIER_LEFTALT;//HID_KEY_ALT_LEFT;
   topBottomKey[2][14] = HID_KEY_GUI_LEFT;
   topBottomKey[2][15] = HID_KEY_SPACE;
   topBottomKey[2][18] = HID_KEY_GUI_LEFT;
-  topBottomKey[2][19] = HID_KEY_ALT_LEFT;
+  topBottomKey[2][19] = 0x40;//KEYBOARD_MODIFIER_LEFTALT;//ID_KEY_ALT_LEFT;
   topBottomKey[2][20] = HID_KEY_SPACE;
 
   topBottomKey[3][9] = HID_KEY_ARROW_UP;
@@ -130,8 +131,8 @@ void defineKeys(){
   topBottomKey[4][12] = HID_KEY_SEMICOLON;
   topBottomKey[4][13] = HID_KEY_SLASH;
   topBottomKey[4][14] = HID_KEY_BACKSLASH;
-  topBottomKey[4][15] = HID_KEY_SHIFT_LEFT;
-  topBottomKey[4][18] = HID_KEY_CONTROL_LEFT;
+  topBottomKey[4][15] = 0x20;//KEYBOARD_MODIFIER_LEFTSHIFT;//HID_KEY_SHIFT_LEFT;
+  topBottomKey[4][18] = 0x10;//KEYBOARD_MODIFIER_LEFTCTRL;//HID_KEY_CONTROL_LEFT;
   topBottomKey[4][19] = HID_KEY_ENTER;
   topBottomKey[4][20] = HID_KEY_O;
 
@@ -214,7 +215,7 @@ void tud_resume_cb(void)
 
 
 bool isModiferKey(uint32_t btn){
-  if ((btn == HID_KEY_CONTROL_LEFT)||(btn == HID_KEY_SHIFT_LEFT)||(btn==HID_KEY_ALT_LEFT)){
+  if ((btn == 0x01)||(btn == 0x02)||(btn==0x04)||(btn == 0x10)||(btn == 0x20)||(btn==0x40)){
     return 1;
   }
 
@@ -251,7 +252,7 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
     
    
 }
-
+/* this breaks other things so commenting it out
 void checkModifers(){
   const uint32_t interval_ms = 10;
   static uint32_t start_ms = 0;
@@ -287,6 +288,7 @@ void checkModifers(){
 
 }
 
+*/
 bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
   const  uint32_t debounceInterval_MS = 5;
   static uint32_t topBottomKeyTime[9][21] = {0};
@@ -297,9 +299,16 @@ bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
   return 1;
 }
 
+void handleModifiers(uint32_t modifierKey){
+  
+
+
+};
+
 bool stateHandling(int topPin, int bottomPin, int currentState) {
   static int pressCount[9][21] = {0};
   static bool buttonState[9][21] = {0};
+  
 
   int flags = currentState | (buttonState[topPin][bottomPin] << 1);
   //bit shift adds a zero to the right. current state is an int and has eight bits so we need the other bit to make the or operation happen correctly
@@ -307,53 +316,100 @@ bool stateHandling(int topPin, int bottomPin, int currentState) {
 
   // Comparing current state vs last state
   // 1 is pressed 0 is open
-  
-  switch (flags){
-    //00
-    case 0:
-      //open open we do nothing
-      break;
-    //10
-    case 1:
-      //closed open we go up one count and update buttonState
-      pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
-      buttonState[topPin][bottomPin] = 1;
-      break;
-    //01
-    case 2:
-    //send keypress and reset counter
-      if(tud_suspended()){
-        tud_remote_wakeup();
-        };
-        //lookup which top gpio we're outputting, which bottom gpio we're reading, and then look up which
-        //key that corresponds to. Then send that as an HID report
-        send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
-        pressCount[topPin][bottomPin] = 0;
-        buttonState[topPin][bottomPin] = 0;
-      break;
-    //11
-    case 3:
-      pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
-      if (pressCount[topPin][bottomPin] > 5) {
-        
-        pressCount[topPin][bottomPin] = 0;
-        
+  if(!isModiferKey(topBottomKey[topPin][bottomPin])){ 
+    switch (flags){
+      //00
+      case 0:
+        //open open we do nothing
+        break;
+
+      //01
+      case 1:
+        //closed open we go up one count and update buttonState
+        pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
+        buttonState[topPin][bottomPin] = 1;
+        break;
+
+      //10
+      case 2:
+      //was closed now open
+      //send keypress and reset counter
         if(tud_suspended()){
           tud_remote_wakeup();
           };
-        while(gpio_get(bottomPin)) send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
+          //lookup which top gpio we're outputting, which bottom gpio we're reading, and then look up which
+          //key that corresponds to. Then send that as an HID report
+          send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
+          pressCount[topPin][bottomPin] = 0;
+          buttonState[topPin][bottomPin] = 0;
+        break;
 
-      }
+      //11
+      // we're monitoring if it's being held down with prescount here
+      case 3:
+        pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
+        if (pressCount[topPin][bottomPin] > 5) {
+          
+          pressCount[topPin][bottomPin] = 0;
+          
+          if(tud_suspended()){
+            tud_remote_wakeup();
+            };
+          while(gpio_get(bottomPin)) send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
 
-      break;
+        }
+
+        break;
+      
+      //it feels like a sin to not put this
+      default:
+        break;
+      }; //end of non modifier keys
+    } //end of non modifier keys
+  
+//modifier state handling
+  else {
+      if(currentState==1) currentModifier |=topBottomKey[topPin][bottomPin];
+      else currentModifier &= ~(topBottomKey[topPin][bottomPin]);
     
-    //it feels like a sin to not put this
-    default:
-      break;
+  /*
+    switch (flags) {
+      case 0:
+        //open open
+        //currentModifier &= ~(1 << topBottomKey[topPin][bottomPin]); 
+        //maybe remove current modifiers but shouldn't be necissary
+        //currentModifier = 0;
+        currentModifier = 2;
+        break;
 
+      case 1:
+            //0 1
+            //was open now cloased we go up one count and update buttonState
+            // add control key modifiers
+        //pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
+        buttonState[topPin][bottomPin] = 1;
+        currentModifier=2; 
+        //currentModifier |= (topBottomKey[topPin][bottomPin]);
+        break;
 
-
-  }
+      case 2:
+        //1 0 first release
+        // remove current control key modifiers
+      // update button state
+        //currentModifier &= ~(1 << topBottomKey[topPin][bottomPin]); 
+        //currentModifier = 0;
+        currentModifier = 2;
+        buttonState[topPin][bottomPin] = 0;
+      case 3:
+        //closed closed
+        // add modifier to global modifiers
+      // this needs to be more sensative than normal keys. ingore button count?
+        //currentModifier |= (topBottomKey[topPin][bottomPin]);
+      currentModifier=2;
+      default:
+        break;
+    }*/
+  };
 
 }
 
@@ -362,7 +418,7 @@ bool scanKeyboard(){
   int bottomPin;
   int currentState;
 
-  checkModifers();
+  //  checkModifers();
 //don't forget to account for sleep mode.
   for (int i = 0; i < 9;i++){
     topPin = topSend[i];
@@ -371,7 +427,7 @@ bool scanKeyboard(){
       bottomPin = bottomRecieve[j];
       currentState = gpio_get(bottomPin);
 
-      if (allowButtonPress(topPin,bottomPin) && !isModiferKey(topBottomKey[topPin][bottomPin])) stateHandling(topPin,bottomPin,currentState);
+      if (allowButtonPress(topPin,bottomPin)) stateHandling(topPin,bottomPin,currentState);
 
       };
     //return topSend GPIO pin to low once we're done with it
@@ -534,7 +590,8 @@ int main(void)
   tusb_init();
   gpio_init_tasks();
   defineKeys();
-   
+  stdio_init_all();
+
   while (1)
   {
     tud_task(); // tinyusb device task

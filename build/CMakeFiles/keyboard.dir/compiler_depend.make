@@ -2413,6 +2413,7 @@ CMakeFiles/keyboard.dir/main.c.obj: ../main.c \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/device/usbd.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
@@ -2423,6 +2424,12 @@ CMakeFiles/keyboard.dir/main.c.obj: ../main.c \
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
   /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+  /home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
   ../usb_descriptors.h
 
 CMakeFiles/keyboard.dir/usb_descriptors.c.obj: ../usb_descriptors.c \
