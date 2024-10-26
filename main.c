@@ -213,13 +213,27 @@ void tud_resume_cb(void)
   blink_interval_ms = BLINK_MOUNTED;
 }
 
-
-bool isModiferKey(uint32_t btn){
+/*
+bool ismodifierKey(uint32_t btn){
   if ((btn == 0x01)||(btn == 0x02)||(btn==0x04)||(btn == 0x10)||(btn == 0x20)||(btn==0x40)){
     return 1;
   }
 
   return 0;
+}
+*/
+
+bool ismodifierKey(int topPin, int bottomPin) {
+  bool modifierKeyMap[9][21] = {};
+  
+  modifierKeyMap[1][12] = 1;
+  modifierKeyMap[1][13] = 1;
+  modifierKeyMap[2][13] = 1;
+  modifierKeyMap[2][19] = 1;
+  modifierKeyMap[4][15] = 1;
+  modifierKeyMap[4][18] = 1;
+
+  return modifierKeyMap[topPin][bottomPin];
 }
 //--------------------------------------------------------------------+
 // USB HID
@@ -229,7 +243,7 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
 {
 
   // skip if hid is not ready yet
-  if ( !tud_hid_ready() || isModiferKey(btn) ) return;
+  if ( !tud_hid_ready()) return;
 
 
     
@@ -252,43 +266,6 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
     
    
 }
-/* this breaks other things so commenting it out
-void checkModifers(){
-  const uint32_t interval_ms = 10;
-  static uint32_t start_ms = 0;
-
-  if ( board_millis() - start_ms < interval_ms) return; // not enough time
-  start_ms += interval_ms;
-
-
-  currentModifier = 0x00;
-  //going to do this the manual way and hope it never changes
-  
-  //left control 0x01
-  gpio_put(1,1);
-  if (gpio_get(12)){
-    currentModifier |= 0x02;
-  };
-  if (gpio_get(13)){
-    currentModifier |= 0x02;
-  };
-  gpio_put(1,0);
-
-  //left alt 0x04
-  gpio_put(2,1);
-  if (gpio_get(13)||gpio_get(19)){
-    currentModifier |= 0x2;
-  };
-  gpio_put(2,0);
-
-  gpio_put(4,1);
-  if (gpio_get(15)) currentModifier |= 0x02;
-  if (gpio_get(18)) currentModifier |= 0x02;
-  gpio_put(4,0);
-
-}
-
-*/
 bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
   const  uint32_t debounceInterval_MS = 5;
   static uint32_t topBottomKeyTime[9][21] = {0};
@@ -298,12 +275,6 @@ bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
   topBottomKeyTime[topButton][bottomButton] += debounceInterval_MS;
   return 1;
 }
-
-void handleModifiers(uint32_t modifierKey){
-  
-
-
-};
 
 bool stateHandling(int topPin, int bottomPin, int currentState) {
   static int pressCount[9][21] = {0};
@@ -316,109 +287,71 @@ bool stateHandling(int topPin, int bottomPin, int currentState) {
 
   // Comparing current state vs last state
   // 1 is pressed 0 is open
-  if(!isModiferKey(topBottomKey[topPin][bottomPin])){ 
-    switch (flags){
-      //00
-      case 0:
-        //open open we do nothing
-        break;
+ 
+  switch (flags){
+    //00
+    case 0:
+      //open open we do nothing
+      break;
 
-      //01
-      case 1:
-        //closed open we go up one count and update buttonState
-        pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
-        buttonState[topPin][bottomPin] = 1;
-        break;
+    //01
+    case 1:
+      //closed open we go up one count and update buttonState
+      pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
+      buttonState[topPin][bottomPin] = 1;
+      break;
 
-      //10
-      case 2:
-      //was closed now open
-      //send keypress and reset counter
+    //10
+    case 2:
+    //was closed now open
+    //send keypress and reset counter
+      if(tud_suspended()){
+        tud_remote_wakeup();
+        };
+        //lookup which top gpio we're outputting, which bottom gpio we're reading, and then look up which
+        //key that corresponds to. Then send that as an HID report
+        send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
+        pressCount[topPin][bottomPin] = 0;
+        buttonState[topPin][bottomPin] = 0;
+      break;
+
+    //11
+    // we're monitoring if it's being held down with prescount here
+    case 3:
+      pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
+      if (pressCount[topPin][bottomPin] > 5) {
+        
+        pressCount[topPin][bottomPin] = 0;
+        
         if(tud_suspended()){
           tud_remote_wakeup();
           };
-          //lookup which top gpio we're outputting, which bottom gpio we're reading, and then look up which
-          //key that corresponds to. Then send that as an HID report
-          send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
-          pressCount[topPin][bottomPin] = 0;
-          buttonState[topPin][bottomPin] = 0;
-        break;
+        while(gpio_get(bottomPin)) send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
 
-      //11
-      // we're monitoring if it's being held down with prescount here
-      case 3:
-        pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
-        if (pressCount[topPin][bottomPin] > 5) {
-          
-          pressCount[topPin][bottomPin] = 0;
-          
-          if(tud_suspended()){
-            tud_remote_wakeup();
-            };
-          while(gpio_get(bottomPin)) send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topPin][bottomPin]);
+      }
 
-        }
-
-        break;
-      
-      //it feels like a sin to not put this
-      default:
-        break;
-      }; //end of non modifier keys
-    } //end of non modifier keys
-  
-//modifier state handling
-  else {
-      if(currentState==1) currentModifier |=topBottomKey[topPin][bottomPin];
-      else currentModifier &= ~(topBottomKey[topPin][bottomPin]);
+      break;
     
-  /*
-    switch (flags) {
-      case 0:
-        //open open
-        //currentModifier &= ~(1 << topBottomKey[topPin][bottomPin]); 
-        //maybe remove current modifiers but shouldn't be necissary
-        //currentModifier = 0;
-        currentModifier = 2;
-        break;
+    //it feels like a sin to not put this
+    default:
+      break;
+    }; //end of non modifier keys
+     //end of non modifier keys
+}
 
-      case 1:
-            //0 1
-            //was open now cloased we go up one count and update buttonState
-            // add control key modifiers
-        //pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
-        buttonState[topPin][bottomPin] = 1;
-        currentModifier=2; 
-        //currentModifier |= (topBottomKey[topPin][bottomPin]);
-        break;
-
-      case 2:
-        //1 0 first release
-        // remove current control key modifiers
-      // update button state
-        //currentModifier &= ~(1 << topBottomKey[topPin][bottomPin]); 
-        //currentModifier = 0;
-        currentModifier = 2;
-        buttonState[topPin][bottomPin] = 0;
-      case 3:
-        //closed closed
-        // add modifier to global modifiers
-      // this needs to be more sensative than normal keys. ingore button count?
-        //currentModifier |= (topBottomKey[topPin][bottomPin]);
-      currentModifier=2;
-      default:
-        break;
-    }*/
-  };
-
+void modifierHandling(int topPin, int bottomPin, bool currentState){
+  if (currentState) currentModifier |= topBottomKey[topPin][bottomPin];
+  else currentModifier &= ~(topBottomKey[topPin][bottomPin]);
 }
 
 bool scanKeyboard(){
   int topPin;
   int bottomPin;
   int currentState;
+  bool allowButtonPressStore;
 
-  //  checkModifers();
+
+  //  checkmodifiers();
 //don't forget to account for sleep mode.
   for (int i = 0; i < 9;i++){
     topPin = topSend[i];
@@ -426,9 +359,11 @@ bool scanKeyboard(){
     for (int j = 0; j < 10;j++){
       bottomPin = bottomRecieve[j];
       currentState = gpio_get(bottomPin);
+      allowButtonPressStore = allowButtonPress(topPin,bottomPin);
+  
+      if (allowButtonPressStore && !ismodifierKey(topPin,bottomPin)) stateHandling(topPin,bottomPin,currentState);
 
-      if (allowButtonPress(topPin,bottomPin)) stateHandling(topPin,bottomPin,currentState);
-
+      if (allowButtonPressStore && ismodifierKey(topPin,bottomPin)) modifierHandling(topPin,bottomPin,currentState);
       };
     //return topSend GPIO pin to low once we're done with it
     gpio_put(topSend[i],0);
@@ -447,42 +382,6 @@ void keyboard_task(){
   tud_task(); // tinyusb device task
   }
 };
-/*
-bool scanKeyboard(){
-  checkModifers();
-  bool istyping = 0;
-//don't forget to account for sleep mode.
-  for (int i = 0; i < 9;i++){
-    gpio_put(topSend[i],1);
-    for (int j = 0; j < 10;j++){
-      if(gpio_get(bottomRecieve[j])&&allowButtonPress(topSend[i],bottomRecieve[j])){
-        
-        //WAKE UP BRO.
-        if(tud_suspended()){
-          tud_remote_wakeup();
-        };
-
-        //lookup which top gpio we're outputting, which bottom gpio we're reading, and then look up which
-        //key that corresponds to. Then send that as an HID report
-        send_hid_report(REPORT_ID_KEYBOARD,topBottomKey[topSend[i]][bottomRecieve[j]]);
-      };
-      };
-    //return topSend GPIO pin to low once we're done with it
-    gpio_put(topSend[i],0);
-  };
-  tud_task();
-  return istyping;
-}
-void keyboard_task(){
-  int n = 0;
-  while (n < 10){
-  scanKeyboard();
-  n = n+1;
-  
-  tud_task(); // tinyusb device task
-  }
-};
-*/
 
 // Every 10ms, we will sent 1 report for each HID profile (keyboard, mouse etc ..)
 // tud_hid_report_complete_cb() is used to send the next report after previous one is complete
@@ -590,7 +489,6 @@ int main(void)
   tusb_init();
   gpio_init_tasks();
   defineKeys();
-  stdio_init_all();
 
   while (1)
   {
