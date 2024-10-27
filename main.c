@@ -96,8 +96,8 @@ void defineKeys(){
   topBottomKey[1][9] = HID_KEY_ESCAPE;
   topBottomKey[1][10] = HID_KEY_GRAVE;
   topBottomKey[1][11] = HID_KEY_TAB;
-  topBottomKey[1][12] = 0x01;//KEYBOARD_MODIFIER_LEFTCTRL;//HID_KEY_CONTROL_LEFT;
-  topBottomKey[1][13] = 0x02;//KEYBOARD_MODIFIER_LEFTSHIFT;//HID_KEY_SHIFT_LEFT;
+  topBottomKey[1][12] = 0x02;//KEYBOARD_MODIFIER_LEFTCTRL;//HID_KEY_CONTROL_LEFT;
+  topBottomKey[1][13] = 0x01;//KEYBOARD_MODIFIER_LEFTSHIFT;//HID_KEY_SHIFT_LEFT;
   topBottomKey[1][14] = HID_KEY_F1;
   topBottomKey[1][15] = HID_KEY_1;
   topBottomKey[1][18] = HID_KEY_Z;
@@ -131,8 +131,8 @@ void defineKeys(){
   topBottomKey[4][12] = HID_KEY_SEMICOLON;
   topBottomKey[4][13] = HID_KEY_SLASH;
   topBottomKey[4][14] = HID_KEY_BACKSLASH;
-  topBottomKey[4][15] = 0x20;//KEYBOARD_MODIFIER_LEFTSHIFT;//HID_KEY_SHIFT_LEFT;
-  topBottomKey[4][18] = 0x10;//KEYBOARD_MODIFIER_LEFTCTRL;//HID_KEY_CONTROL_LEFT;
+  topBottomKey[4][15] = 0x10;//KEYBOARD_MODIFIER_LEFTSHIFT;//HID_KEY_SHIFT_LEFT;
+  topBottomKey[4][18] = 0x20;//KEYBOARD_MODIFIER_LEFTCTRL;//HID_KEY_CONTROL_LEFT;
   topBottomKey[4][19] = HID_KEY_ENTER;
   topBottomKey[4][20] = HID_KEY_O;
 
@@ -267,7 +267,7 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
    
 }
 bool allowButtonPress(uint8_t topButton, uint8_t bottomButton){
-  const  uint32_t debounceInterval_MS = 5;
+  const  uint32_t debounceInterval_MS = 10;
   static uint32_t topBottomKeyTime[9][21] = {0};
   
   if ((board_millis() - topBottomKeyTime[topButton][bottomButton]) < debounceInterval_MS) return 0;
@@ -319,7 +319,7 @@ bool stateHandling(int topPin, int bottomPin, int currentState) {
     // we're monitoring if it's being held down with prescount here
     case 3:
       pressCount[topPin][bottomPin] = pressCount[topPin][bottomPin] + 1;
-      if (pressCount[topPin][bottomPin] > 5) {
+      if (pressCount[topPin][bottomPin] > 50) {
         
         pressCount[topPin][bottomPin] = 0;
         

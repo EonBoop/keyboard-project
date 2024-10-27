@@ -1290,9 +1290,9 @@ Discarded input sections
                 0x0000000000000000       0x50 CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .text.board_getchar
                 0x0000000000000000        0xc CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
- .text          0x0000000000000000        0x0 /tmp/cc0zOGss.o
- .data          0x0000000000000000        0x0 /tmp/cc0zOGss.o
- .bss           0x0000000000000000        0x0 /tmp/cc0zOGss.o
+ .text          0x0000000000000000        0x0 /tmp/cc2GfPXm.o
+ .data          0x0000000000000000        0x0 /tmp/cc2GfPXm.o
+ .bss           0x0000000000000000        0x0 /tmp/cc2GfPXm.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -1556,7 +1556,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x0000000010000000      0x100
                 0x0000000010000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x0000000010000000      0x100 /tmp/cc0zOGss.o
+ .boot2         0x0000000010000000      0x100 /tmp/cc2GfPXm.o
                 0x0000000010000100                __boot2_end__ = .
                 0x0000000000000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -2571,7 +2571,7 @@ LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tiny
 LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-LOAD /tmp/cc0zOGss.o
+LOAD /tmp/cc2GfPXm.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2687,7 +2687,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000000000007a8       0x2c CMakeFiles/keyboard.dir/home/eon/fucking_around/Pico/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .ARM.attributes
-                0x00000000000007d4       0x22 /tmp/cc0zOGss.o
+                0x00000000000007d4       0x22 /tmp/cc2GfPXm.o
  .ARM.attributes
                 0x00000000000007f6       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

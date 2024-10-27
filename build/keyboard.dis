@@ -542,7 +542,7 @@ Disassembly of section .text:
 100004c0:	203c1b16 	.word	0x203c1b16
 100004c4:	00000706 	.word	0x00000706
 100004c8:	00003529 	.word	0x00003529
-100004cc:	3a02012b 	.word	0x3a02012b
+100004cc:	3a01022b 	.word	0x3a01022b
 100004d0:	00001404 	.word	0x00001404
 100004d4:	0450514f 	.word	0x0450514f
 100004d8:	00002ce3 	.word	0x00002ce3
@@ -551,8 +551,8 @@ Disassembly of section .text:
 100004e4:	00004a49 	.word	0x00004a49
 100004e8:	00004e4d 	.word	0x00004e4d
 100004ec:	00001327 	.word	0x00001327
-100004f0:	20313833 	.word	0x20313833
-100004f4:	00002810 	.word	0x00002810
+100004f0:	10313833 	.word	0x10313833
+100004f4:	00002820 	.word	0x00002820
 100004f8:	00002543 	.word	0x00002543
 100004fc:	44360e0c 	.word	0x44360e0c
 10000500:	0000120f 	.word	0x0000120f
@@ -671,7 +671,7 @@ Disassembly of section .text:
 100005ee:	00a4      	lsls	r4, r4, #2
 100005f0:	58a3      	ldr	r3, [r4, r2]
 100005f2:	3301      	adds	r3, #1
-100005f4:	2b05      	cmp	r3, #5
+100005f4:	2b32      	cmp	r3, #50	; 0x32
 100005f6:	dc01      	bgt.n	100005fc <stateHandling+0x9c>
 100005f8:	50a3      	str	r3, [r4, r2]
 100005fa:	e7c8      	b.n	1000058e <stateHandling+0x2e>
@@ -819,10 +819,10 @@ Disassembly of section .text:
 1000072e:	009b      	lsls	r3, r3, #2
 10000730:	58d2      	ldr	r2, [r2, r3]
 10000732:	1a80      	subs	r0, r0, r2
-10000734:	2804      	cmp	r0, #4
+10000734:	2809      	cmp	r0, #9
 10000736:	d93f      	bls.n	100007b8 <scanKeyboard+0xf8>
 10000738:	4659      	mov	r1, fp
-1000073a:	3205      	adds	r2, #5
+1000073a:	320a      	adds	r2, #10
 1000073c:	50ca      	str	r2, [r1, r3]
 1000073e:	a806      	add	r0, sp, #24
 10000740:	22bd      	movs	r2, #189	; 0xbd
