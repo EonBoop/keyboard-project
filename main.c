@@ -31,6 +31,7 @@
 
 #include "bsp/board.h"
 #include "pico/stdio.h"
+#include "pico/time.h"
 #include "tusb.h"
 #include "hardware/gpio.h"
 #include "pico/stdlib.h"
@@ -358,6 +359,7 @@ bool scanKeyboard(){
     gpio_put(topPin,1);
     for (int j = 0; j < 10;j++){
       bottomPin = bottomRecieve[j];
+
       currentState = gpio_get(bottomPin);
       allowButtonPressStore = allowButtonPress(topPin,bottomPin);
   
